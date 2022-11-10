@@ -12,7 +12,7 @@ const Banner = () => {
           <br />
           <br />
         </p>
-        <h5 className='text-warning'><small className='text-white'>Contact: </small> jeckychef@hotmail.com</h5>
+        <h5 className='text-warning'><small className='text-white'>Contact:</small> jeckychef@hotmail.com</h5>
           <h5 className='text-warning'><small className='text-white'>Whatsapp: </small>3298654091</h5>
       </div>
       <div>

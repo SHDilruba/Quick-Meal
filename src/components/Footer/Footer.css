@@ -1,0 +1,14 @@
+.footer-container{
+  height: 250px;
+}
+.footer{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap: 20px;
+   align-items: center;
+}
+.logo{
+  width: 70px;
+  height: 50px;
+  border-radius: 50px;
+}
