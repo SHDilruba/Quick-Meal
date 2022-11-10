@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div>
-         Footer
+    <div className='bg-warning py-3'>
+       header
     </div>
   );
 };

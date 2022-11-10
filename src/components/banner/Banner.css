@@ -1,0 +1,33 @@
+.cover-description{
+  width: 50%;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+
+.cover{
+  display: flex;
+  align-items: center;
+  justify-content: space-around ;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-radius: 30px;
+} 
+.cover img{
+padding: 0;
+margin: 0;
+} 
+
+@media screen and (max-width: 900px) {
+  .cover{
+    flex-direction: column;
+  } 
+  .cover-description{
+    width: 90%;
+    margin-top: 50px;
+    height: 330px;
+  
+  } 
+  .cover img{
+    width: 90%;
+  }   
+}
