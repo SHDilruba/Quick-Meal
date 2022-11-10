@@ -1,0 +1,24 @@
+.menu{
+  margin-right: 17px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: white;
+}
+.login{
+  margin-right: 17px;
+  margin-bottom: 6px;
+  text-decoration: none;
+  color: black;
+}
+.login:hover{
+background-color: white;
+}
+.menu:hover{
+background-color: white;
+}
+
+.logo{
+width: 54px;
+height: 36px;
+margin-bottom: 15px;
+}
