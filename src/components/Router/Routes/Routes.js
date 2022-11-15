@@ -1,11 +1,12 @@
 import Main from "../../../Layout/Main";
 import Blog from "../../Blog/Blog";
 import Home from "../../Home/Home";
-import PrivateRoute from "../../HomeServices/PrivateRoute";
+import PrivateRoute from "../../PrivateRoute";
+import Login from "../../Login/Login";
 import ServiceDetail from "../../ServiceDetails/ServiceDetail";
 import Services from "../../Services/Services";
-
-const { createBrowserRouter } = require("react-router-dom");
+import Signup from "../../Signup/Signup";
+import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -17,11 +18,15 @@ const router = createBrowserRouter([
           element: <Home></Home>
       },
       {
+        path: '/home',
+        element: <Home></Home>
+      },
+      {
         path: '/services',
         element: <Services></Services>
       },
       {
-        path: '/service',
+        path: '/review',
         element: <PrivateRoute><ServiceDetail></ServiceDetail></PrivateRoute>
       },
       {
@@ -29,20 +34,16 @@ const router = createBrowserRouter([
         element: <Blog></Blog>
       },
       {
-        path: '/serviceadd',
+        path: '/addservice',
         element: <PrivateRoute><div></div></PrivateRoute>
       },
       {
-        path: '/review',
-        element: <PrivateRoute><div></div></PrivateRoute>
-      },
-      {
-        path: '/register',
-        element: <PrivateRoute><div></div></PrivateRoute>
+        path: '/signup',
+        element: <Signup></Signup>
       },
       {
         path: '/login',
-        element:  <PrivateRoute><div></div></PrivateRoute>
+        element:  <Login></Login>
       }
     ]
   }

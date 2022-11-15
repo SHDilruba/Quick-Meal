@@ -1,0 +1,16 @@
+.login-form{
+  border: 1px solid grey;
+  border-radius: 50px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 30px 50px 30px 50px;
+}
+
+.login-btn:hover{
+   background-color: black;
+   color: white;
+}
+.git-login-btn:hover{
+   background-color: rgb(244, 184, 73);
+   color: black;
+}

@@ -3,11 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Services.css'
 
 const Services = () => {
-
   
-  // const navigate = useNavigate(); 
+  const navigate = useNavigate(); 
   const handleNavigate = () =>{
     // navigate(`/services/${id}`);
+    navigate('/review'); //just for test
 }
 
   return (

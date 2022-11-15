@@ -2,12 +2,13 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './HomeServices.css'
 
-  // const navigate = useNavigate(); 
+const HomeServices = () => {
+  
+  const navigate = useNavigate(); 
   const handleNavigate = () =>{
     // navigate(`/services/${id}`);
 }
 
-const HomeServices = () => {
   return (
     <div >
     <div  className='services-container container mt-5 pt-5'>

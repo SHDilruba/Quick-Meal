@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import img1 from '../../images/cover.png'
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const { user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+       logOut()
+       .then(() =>{})
+       .catch(err => console.log(err));
+  }
 
   return (
     <div className='container bg-warning py-1 rounded'>
@@ -15,7 +23,7 @@ const Header = () => {
         <Container>
           <div>
           <img className='logo' src={img1} alt="" />
-          <Navbar.Brand className='title fs-4'>Quick Meal</Navbar.Brand>
+          <Navbar.Brand className='title fs-5 px-2 text-light bg-dark rounded'>Quick Meal</Navbar.Brand>
           </div>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -25,8 +33,19 @@ const Header = () => {
             <NavLink className="menu" to="/blog">Blog</NavLink>
             </Nav>
             <Nav>
-            <NavLink className="login fs-4" to='/login'>Login
-             </NavLink>
+            <div className="">
+              {user?.uid ? 
+               <>
+                <NavLink className=" menu" to='/review' >My Reviews</NavLink>
+                <button className='right-btn mx-2 rounded'>Add Service</button>
+                  <button className='right-btn rounded' onClick={handleLogOut} >Log Out</button>
+               </>
+              : 
+              <>
+                <Link to='/Login'><button className='right-btn rounded px-3 fs-5'>Login</button></Link> 
+              </>
+              }
+             </div>
             </Nav>
           </Navbar.Collapse>
         </Container>
