@@ -17,8 +17,8 @@ const Header = () => {
   }
 
   return (
-    <div className='container bg-warning py-1 rounded'>
-        <div>
+    <div className='header-container container '>
+        <div  className=''>
       <Navbar className='cover-area' collapseOnSelect expand="lg" variant="light">
         <Container>
           <div>

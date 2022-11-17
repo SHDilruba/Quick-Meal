@@ -1,3 +1,7 @@
+.header-container{
+ background-color:  rgb(238, 234, 229);
+ border-radius: 8px;
+}
 .menu{
   margin-right: 17px;
   margin-bottom: 5px;
@@ -14,7 +18,7 @@
 background-color: white;
 }
 .menu:hover{
-background-color: white;
+background-color: rgb(227, 180, 92);
 }
 
 .logo{

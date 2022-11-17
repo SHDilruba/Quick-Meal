@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         element: <Services></Services>
       },
       {
-        path: '/review',
+        path: '/review/:_id',
         element: <PrivateRoute><ServiceDetail></ServiceDetail></PrivateRoute>
       },
       {

@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around ;
-  margin-top: 50px;
+  margin-top: 70px;
   margin-bottom: 100px;
   border-radius: 30px;
 } 
@@ -17,17 +17,21 @@ padding: 0;
 margin: 0;
 } 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 902px) {
   .cover{
     flex-direction: column;
+    width: 100%;
+    margin: 0;
+    border-radius: 0px;
   } 
   .cover-description{
     width: 90%;
-    margin-top: 50px;
-    height: 330px;
+    margin-top: 20px;
+    height: 460px;
+    padding: 0;
   
   } 
   .cover img{
-    width: 90%;
+    width: 100%;
   }   
 }

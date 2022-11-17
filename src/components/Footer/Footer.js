@@ -5,8 +5,8 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div className='footer-container container bg-dark'>
-          <div className='footer container pt-5'>
+    <div className='footer-container container bg-dark '>
+          {/* <div className='footer pt-5'> */}
               <div>
                 <p className='text-white'>Contact:</p>
                   <h6 className='text-warning'><small className='text-white'>Email: </small> jeckychef@hotmail.com</h6>
@@ -23,7 +23,7 @@ const Footer = () => {
                     <h6 className='text-warning'>Sicily, Italy</h6>
               </div>
           </div>
-    </div>
+    // </div>
   );
 };
 
