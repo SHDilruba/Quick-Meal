@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import HomeServiceCard from '../HomeServiceCard/HomeServiceCard';
+import ServiceCard from '../ServiceCard/ServiceCard';
 import './HomeServices.css'
 
 const HomeServices = () => {
   const [services, setServices] = useState([]);
 
   useEffect( () =>{
-     fetch('http://localhost:5000/services')
+     fetch('http://localhost:5000/topServices')
      .then(res =>res.json())
      .then(data => setServices(data))
   }, [])
 
   return (
-      <div className='mt-5 pt-5'>
-        <div className='services-container container'>
-        {
-          services.map(service => <HomeServiceCard service={service} key={service._id}></HomeServiceCard>)
-        }
-          </div>
-          <div className=' all-services container mb-5 pt-5'>
+      <div className='mt-5 pt-3 container'>
+        <h1 className='title mb-5'>Available Top Services:</h1>
+           <div className='services-container'>
+                {
+                  services.map(service => <ServiceCard service={service} key={service._id}></ServiceCard>)
+                }
+           </div>
+           <div className=' all-services container mb-5 pt-5'>
               <Link to={'/services'}> <button className=' btn btn-dark mb-5 py-3'>All Services</button></Link>
-          </div>
+           </div>
       </div>
   );
 };

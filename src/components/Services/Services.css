@@ -8,6 +8,7 @@ display: grid;
 grid-template-columns: repeat(3, 1fr);
 gap: 24px;
 }
+
 .card h3{
 text-decoration: none;
 color: rgb(148, 22, 22);
