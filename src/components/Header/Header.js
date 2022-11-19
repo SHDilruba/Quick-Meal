@@ -36,7 +36,7 @@ const Header = () => {
             <div className="">
               {user?.uid ? 
                <>
-                <NavLink className=" menu" to='/review' >My Reviews</NavLink>
+                <NavLink className=" menu" to='/reviews' >My Reviews</NavLink>
                 <button className='right-btn mx-2 rounded'>Add Service</button>
                   <button className='right-btn rounded' onClick={handleLogOut} >Log Out</button>
                </>

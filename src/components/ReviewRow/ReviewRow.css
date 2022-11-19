@@ -1,0 +1,11 @@
+
+ .service-detail img{
+  width: 200px;
+  height: 110px;
+  margin-bottom: 8px;
+  border: 1px solid grey;
+}
+
+.review-length{
+    color: rgb(148, 22, 22);
+}

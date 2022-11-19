@@ -1,0 +1,10 @@
+#review-container{
+   border: 2px solid black ;
+   width: 60%;
+   text-align: center;
+   margin-left: 20%;
+}
+
+.review-table{
+   width: 65%;
+}

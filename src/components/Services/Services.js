@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import ServiceCard from '../ServiceCard/ServiceCard';
 import './Services.css'
 

@@ -39,6 +39,7 @@ const Login = () => {
          providerLogin(googleProvider)
           .then(result => {
            const user = result.user; 
+           navigate(from, {replace: true})
            setError('');
             console.log(user);
           })
