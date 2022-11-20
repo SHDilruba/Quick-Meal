@@ -13,15 +13,15 @@ const HomeServices = () => {
   }, [])
 
   return (
-      <div className='mt-5 pt-3 container'>
-        <h1 className='title mb-5'>Available Top Services:</h1>
+      <div className='mt-5 pt-3'>
+        <h1 className='title mb-5 text-warning'>Available Services</h1>
            <div className='services-container'>
                 {
                   services.map(service => <ServiceCard service={service} key={service._id}></ServiceCard>)
                 }
            </div>
-           <div className=' all-services container mb-5 pt-5'>
-              <Link to={'/services'}> <button className=' btn btn-dark mb-5 py-3'>All Services</button></Link>
+           <div className='all-services container mb-5 pt-5'>
+              <Link to={'/services'}> <button className=' btn btn-dark rounded-pill mb-5 py-3'>All Services</button></Link>
            </div>
       </div>
   );

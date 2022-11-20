@@ -46,16 +46,16 @@ const ServiceDetail = () => {
 }
 
   return (
-    <div className='service-detail container py-5 w-75'>
-        <div className="card rounded my-5">
+    <div className='service-detail container col-lg-8'>
+        <div id='detail-card' className="card mt-5 rounded-end">
           <div className="row g-0">
-            <div className=" col-md-6">
-              <img src={picture} className="w-100 img-fluid h-100 rounded-start" alt="..."/>
+            <div className="col-md-6">
+              <img src={picture} className="img-fluid rounded-start" alt="..."/>
             </div >
-            <div className="col col-md-6 py-3">
-              <div class="card-body ">
+            <div className="col col-md-6">
+              <div class="card-body">
                 <h1 className="service-name card-title">{name}</h1>
-                <p className="card-text py-3 pe-4 ">{description}</p>
+                <p className="card-text">{description}</p>
                 <h3 className="card-text"><small className="text-warning ">Price: ${price}</small></h3>
               </div>
             </div>

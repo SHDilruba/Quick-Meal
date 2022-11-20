@@ -4,7 +4,7 @@ import ReviewRow from '../ReviewRow/ReviewRow';
 import { Table } from 'react-bootstrap';
 import './MyReview.css';
 
-const Reviews = () => {
+const MyReviews = () => {
   const {user} = useContext(AuthContext);
    const [reviews, setReviews] = useState([]);
 
@@ -61,4 +61,4 @@ const Reviews = () => {
     );
 };
 
-export default Reviews;
+export default MyReviews;

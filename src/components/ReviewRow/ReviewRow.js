@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './ReviewRow.css';
 
 const ReviewRow = ({review, handleDelete}) => {
-  console.log(review)
   const {_id, customer, name, message, email, service } = review;
 
    const [reviewService, setReviewService] = useState([]);

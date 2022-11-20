@@ -37,8 +37,8 @@ const Header = () => {
               {user?.uid ? 
                <>
                 <NavLink className=" menu" to='/reviews' >My Reviews</NavLink>
-                <button className='right-btn mx-2 rounded'>Add Service</button>
-                  <button className='right-btn rounded' onClick={handleLogOut} >Log Out</button>
+                <NavLink to='/addService' ><button className='right-btn rounded'>Add Service</button></NavLink>
+                 <button className='right-btn rounded ms-3' onClick={handleLogOut} >Log Out</button>
                </>
               : 
               <>

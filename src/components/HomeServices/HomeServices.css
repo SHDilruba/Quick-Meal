@@ -3,8 +3,9 @@
     grid-template-columns: repeat(3,1fr);
     gap: 40px;
     position: relative;
+    margin-bottom: 100px;
 }
-
+ 
 .title{
   color: rgb(148, 22, 22);
   }
@@ -13,7 +14,16 @@
   height: 580px;
 }
 
- .card button{
+#card h3{
+  text-decoration: none;
+  color: rgb(148, 22, 22);
+  }
+
+#card .para{
+   padding: 10px 20px 10px 20px;
+}
+
+ #card button{
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -39,7 +49,6 @@
 
 .all-services{
     background-color: rgb(238, 234, 229);
-    border-radius: 30px;
 }
 
 .all-services button{
@@ -56,21 +65,29 @@
     .services-container{
       grid-template-columns: 1fr;
       width: 100%;
+      gap: 0;
+      margin: 0;
+      padding: 0;
      margin-bottom: 0;
     }
 
-    #card{
+     #card{
       display: flex;
       flex-direction: column;
       margin-bottom: 30px;
-      height: 620px;
+      margin-right: 0;
+      height: 550px;
     }
+
+    #card .para{
+      padding: 0;
+   }
 
     #card button{
       width: 100%;
     }
 
-    .all-services button{
+   .all-services button{
        width: 80%;
-    }
+    } 
   }

@@ -1,4 +1,4 @@
-.services-container{
+/* .services-container{
   display: grid;
   grid-template-columns: repeat(3,1fr);
   margin-bottom: 100px;
@@ -18,6 +18,7 @@ color: rgb(148, 22, 22);
 width: 100%;
 height: 60%;
 }
+
 .card button:hover{
   background-color: black;
   color: white;
@@ -26,7 +27,7 @@ height: 60%;
 @media screen and (max-width: 902px){
 .services-container{
  grid-template-columns: 1fr;
- width: 80%;
+ width: 100%;
  gap: 0px;
 }
 .services{
@@ -35,4 +36,4 @@ height: 60%;
  width: 100%;
  gap: 0px;
 }
-}
+} */

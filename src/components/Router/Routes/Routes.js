@@ -7,7 +7,8 @@ import ServiceDetail from "../../ServiceDetails/ServiceDetail";
 import Services from "../../Services/Services";
 import Signup from "../../Signup/Signup";
 import { createBrowserRouter } from "react-router-dom";
-import Reviews from "../../MyReviews/MyReviews";
+import MyReviews from "../../MyReviews/MyReviews";
+import AddService from "../../AddService/AddService";
 
 const router = createBrowserRouter([
   {
@@ -33,15 +34,18 @@ const router = createBrowserRouter([
       },
       {
         path: '/reviews',
-        element: <PrivateRoute><Reviews></Reviews></PrivateRoute>
+        element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+      },
+      {
+        path: '/addService',
+        loader:  async() =>{
+          return fetch('http://localhost:5000/services')
+        },
+        element: <PrivateRoute><AddService></AddService></PrivateRoute>
       },
       {
         path: '/blog',
         element: <Blog></Blog>
-      },
-      {
-        path: '/addservice',
-        element: <PrivateRoute><div></div></PrivateRoute>
       },
       {
         path: '/signup',
