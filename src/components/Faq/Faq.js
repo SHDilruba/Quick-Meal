@@ -1,11 +1,12 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import './Faq.css';
 
 const Faq = () => {
   return (
-    <div className='my-5 py-5 text-warning'>
+    <div className='accordion-container text-warning'>
       <h2 className='my-5'>Have you any question about Quick Meal?</h2>
-    <Accordion className='text-warning border border-warning' defaultActiveKey="0" flush>
+    <Accordion className='text-warning text-start border border-warning mb-5' defaultActiveKey="0" flush>
       <Accordion.Item eventKey="0">
         <Accordion.Header>Is this a restaurent?</Accordion.Header>
         <Accordion.Body>

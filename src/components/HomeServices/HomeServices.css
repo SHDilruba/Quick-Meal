@@ -53,6 +53,7 @@
 
 .all-services{
     background-color: rgb(238, 234, 229);
+    border-radius: 20px;
 }
 
 .all-services button{
