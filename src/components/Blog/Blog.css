@@ -1,21 +1,42 @@
 .blog-container{
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-top: 70px;
+  margin-bottom: 100px;
 }
 .post-container{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
   align-items: center; 
   justify-content: center; 
   margin-top: 50px;    
 }
-.blog{
-margin-top: 50px;
+
+#blog-card{
+  height: 570px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.card-text{
+  background-color: rgb(238, 234, 229);
+}
+
+.card-header{
+  height: 120px;
 }
 
 @media screen and (max-width: 902px){
 .post-container{
 grid-template-columns: 1fr;
+margin-top: 50px;
+}
+
+.blog-container{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#blog-card{
+  height: 450px;
 }
 }
