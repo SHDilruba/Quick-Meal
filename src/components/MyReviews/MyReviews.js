@@ -33,8 +33,8 @@ const MyReviews = () => {
 }
 
   return (
-    <div className=' container my-5 py-5'>
-        <div className=' mb-5 pb-4 text-warning '> { reviews.length > 0 ? <h1>You have {reviews.length} {reviews.length > 1 ? 'Reviews': 'Review'}</h1>
+    <div className='my-review-container container'>
+        <div className='mb-5 text-warning '> { reviews.length > 0 ? <h1>You have {reviews.length} {reviews.length > 1 ? 'Reviews': 'Review'}</h1>
         :
          <h1>You don't have any review</h1>
          }</div>

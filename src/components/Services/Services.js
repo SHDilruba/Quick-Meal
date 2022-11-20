@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCard from '../ServiceCard/ServiceCard';
-import './Services.css'
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -12,7 +11,7 @@ const Services = () => {
   }, [])
 
   return (
-   <div className='services-title mt-5 '>
+   <div className='services-title container'>
       <h1 className='text-warning mt-5 py-3'>Available all Services of Quick Meal</h1>
       <div className='services-container container mt-5'>
         {

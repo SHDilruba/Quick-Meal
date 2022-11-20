@@ -1,3 +1,8 @@
+.my-review-container{
+   margin-top: 80px;
+   margin-bottom: 140px;
+ }
+
 #review-container{
    border: 2px solid black ;
    width: 60%;
@@ -7,4 +12,19 @@
 
 .review-table{
    width: 65%;
+}
+
+@media screen and (max-width: 902px){
+   .my-review-container{
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+
+   #review-container{
+      width: 100%;
+      margin: 0;
+   }
+   .review-table{
+   width: 100%;
+}
 }

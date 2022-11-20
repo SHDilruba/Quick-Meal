@@ -14,9 +14,9 @@ const ReviewRow = ({review, handleDelete}) => {
 
   return (
     <tr>
-      <td> <div onClick={() => handleDelete(_id)} className='pt-4 mt-5'><button>X</button></div></td>
+      <td> <div onClick={() => handleDelete(_id)} className='review-table mt-5'><button>X</button></div></td>
         <td>
-          <div className='service-detail m-3'>
+          <div className='service-detail '>
               {
                 reviewService?.picture &&
                 <img src={reviewService.picture} alt="" />
@@ -28,9 +28,9 @@ const ReviewRow = ({review, handleDelete}) => {
           </div>
         </td>
         <td>
-          <div className='py-5'>
+          <div className='table-part py-5'>
                  <div>{customer}</div>
-                 <div>{email}</div>
+                 <div className='email'>{email}</div>
               </div>
         </td >
         <td> <div className='py-5'>{message}</div></td>
