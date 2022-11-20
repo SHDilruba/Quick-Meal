@@ -1,4 +1,5 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import img1 from '../../images/cover.png'
 import './Banner.css'
 
@@ -16,7 +17,11 @@ const Banner = () => {
           <h5 className='text-warning'><small className='text-white'>Whatsapp: </small>3298654091</h5>
       </div>
       <div>
-          <img className='img-fluid' src={img1} alt="" />
+          <PhotoProvider>
+                  <PhotoView src={img1}>
+                  <img className='img-fluid' src={img1} alt=" " />
+                  </PhotoView>
+            </PhotoProvider>
       </div>
   </div>
   );

@@ -9,13 +9,11 @@ const ServiceCard = ({service}) => {
   return (
     <div>
         <div id='card' className='service card w-100'>
-      <PhotoProvider>
-      <div className="">
-          <PhotoView src={picture}>
-           <img className='img-fluid' src={picture} alt="" />
-          </PhotoView>
-      </div>
-    </PhotoProvider>
+            <PhotoProvider>
+                  <PhotoView src={picture}>
+                     <img className='img-fluid' src={picture} alt="" />
+                  </PhotoView>
+            </PhotoProvider>
                 <h3 className='pt-4'>{name}</h3>
                    <p className='para'>{description}</p>
                   <h4 className='text-warning'>Price: ${price}</h4>
