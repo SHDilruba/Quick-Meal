@@ -5,7 +5,7 @@
      width: 50%;
 }
 
-@media screen and (max-width: 902px){
+@media screen and (max-width: 959px){
   #add-service{
     margin-top: 40px;
     margin-bottom: 50px;

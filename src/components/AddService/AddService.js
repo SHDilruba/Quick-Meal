@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import './AddService.css';
 
 const AddService = () => {
   const {_id} = useLoaderData();
-  // const {_id, name, description, price, picture} = useLoaderData();
 
   const handleAddService = event =>{
     event.preventDefault()

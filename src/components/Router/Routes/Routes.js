@@ -9,6 +9,8 @@ import Signup from "../../Signup/Signup";
 import { createBrowserRouter } from "react-router-dom";
 import MyReviews from "../../MyReviews/MyReviews";
 import AddService from "../../AddService/AddService";
+import PostReview from "../../PostReview/PostReview";
+import AllReviews from "../../AllReviews/AllReviews";
 
 const router = createBrowserRouter([
   {
@@ -29,11 +31,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/serviceDetail/:id',
-        element: <PrivateRoute><ServiceDetail></ServiceDetail></PrivateRoute>,
+        element: <ServiceDetail></ServiceDetail>,
         loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
       },
       {
-        path: '/reviews',
+        path: '/myReviews',
         element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
       },
       {
@@ -49,10 +51,16 @@ const router = createBrowserRouter([
       },
       {
         path: '/signup',
+        loader:  async() =>{
+          return fetch('http://localhost:5000/login')
+        },
         element: <Signup></Signup>
       },
       {
         path: '/login',
+        loader: async() =>{
+          return fetch('http://localhost:5000/login')
+        },
         element:  <Login></Login>
       }
     ]

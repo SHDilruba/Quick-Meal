@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { Button} from 'react-bootstrap';
 
 const ServiceCard = ({service}) => {
   const {_id, name, description, price, picture} = service;
 
   return (
-    <div>
+    <div className='container'>
         <div id='card' className='service card w-100'>
             <PhotoProvider>
                   <PhotoView src={picture}>
@@ -15,10 +16,10 @@ const ServiceCard = ({service}) => {
                   </PhotoView>
             </PhotoProvider>
                 <h3 className='pt-4'>{name}</h3>
-                   <p className='para'>{description}</p>
+                   <p className='para'>{description.slice(0,100)}.....</p>
                   <h4 className='text-warning'>Price: ${price}</h4>
                 <Link to={`/serviceDetail/${_id}`}>
-                     <button className=' btn btn-dark w-100 py-3'>Service Detail</button>
+                     <Button className='w-75 rounded-pill mt-3' variant='light border-dark' size='md'>Service Detail</Button>
                 </Link>
           </div>
     </div>

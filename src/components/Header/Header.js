@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, Link } from 'react-router-dom';
 import img1 from '../../images/cover.png'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { Button } from 'react-bootstrap';
 
 const Header = () => {
   const { user, logOut} = useContext(AuthContext);
@@ -36,13 +37,13 @@ const Header = () => {
             <div className="">
               {user?.uid ? 
                <>
-                <NavLink className=" menu" to='/reviews' >My Reviews</NavLink>
-                <NavLink to='/addService' ><button className='right-btn rounded'>Add Service</button></NavLink>
-                 <button className='right-btn rounded ms-3' onClick={handleLogOut} >Log Out</button>
+                <NavLink className=" menu" to='/myReviews' >My Reviews</NavLink>
+                <NavLink to='/addService' ><button className='right-btn rounded py-1'>Add Service</button></NavLink>
+                 <button className='right-btn rounded ms-3 py-1' onClick={handleLogOut} >Log Out</button>
                </>
               : 
               <>
-                <Link to='/Login'><button className='right-btn rounded px-3 fs-5'>Login</button></Link> 
+                <Link to='/Login'><Button variant="dark" className='right-btn rounded'>Login</Button></Link>
               </>
               }
              </div>

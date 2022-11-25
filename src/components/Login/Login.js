@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Login.css';
 
 const Login = () => {
-  const { signIn, providerLogin } = useContext(AuthContext);
+  const { signIn, providerLogin, loading } = useContext(AuthContext);
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,12 +20,30 @@ const Login = () => {
 
      signIn(email, password)
      .then (result => {
-        const user = result.user;
-        console.log(user);
-        navigate(from, {replace: true})
-        alert('Login successful')
-        navigate (from, {replace: true})
-        setError(''); 
+       const user = result.user;
+       setError('');
+
+        const currentUser = {
+            email: user.email
+        }
+        console.log(currentUser);
+
+fetch('http://localhost:5000/jwt', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify(currentUser)
+})
+ .then(res => res.json())
+ .then(data => {
+     console.log(data);
+     localStorage.setItem('quickMealToken', data.token);
+     alert('Login successful')
+         navigate (from, { replace: true })
+     
+ });
+
      })
      .catch(error =>{
          console.log(error.message)

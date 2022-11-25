@@ -1,18 +1,26 @@
 .benefits-container{
-  margin-top: 130px;
+  margin-top: 120px;
 }
 
 .benefits-card{
    display: grid;
    grid-template-columns: repeat(3,1fr);
-   gap: 34px;
-   margin-top: 60px;
+   gap: 30px;
+   margin-top: 20px;
    padding: 50px;
    border-radius: 20px;
-   background-color: rgb(238, 234, 229);
 }
+.benefit-body{
+  background-color:  rgb(238, 234, 229);
+}
+
+.benefit-header{
+     height: 56px;
+     background-color: rgb(238, 234, 229);
+}
+
 .benefit{
-  box-shadow: 1px 1px 1px 1px rgb(195, 152, 71);
+  box-shadow: 1px 1px 1px 1px rgb(227, 226, 224);
 }
 
 @media screen and (max-width:902px) {

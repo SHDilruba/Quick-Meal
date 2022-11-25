@@ -1,17 +1,29 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Table } from 'react-bootstrap';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import ReviewRow from '../ReviewRow/ReviewRow';
-import { Table } from 'react-bootstrap';
 import './MyReview.css';
 
 const MyReviews = () => {
-  const {user} = useContext(AuthContext);
+
+  const {user, logOut} = useContext(AuthContext);
    const [reviews, setReviews] = useState([]);
 
    useEffect(() =>{
-         fetch(`http://localhost:5000/reviews?email=${user.email}`)
-         .then(res => res.json())
-         .then(data =>setReviews(data))
+         fetch(`http://localhost:5000/reviews?email=${user.email}`, {
+              headers: {
+                  authorization: `Bearer ${localStorage.getItem('quickMealToken')}`
+              }
+         })
+         .then(res => {
+          if(res.status === 401 || res.status === 403){
+              logOut()
+          }
+          return res.json()
+         })
+         .then(data => {
+          setReviews(data)
+         })
    }, [user?.email]);
 
    const handleDelete = id =>{
@@ -32,33 +44,64 @@ const MyReviews = () => {
   }
 }
 
+const handleStatusUpdate = id =>{
+  fetch(`http://localhost:5000/reviews/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({status: 'Approved'})
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    if(data.modifiedCount > 0) {
+      const remaining =  reviews.filter(rev => rev._id !== id)
+      const approving = reviews.find(rev => rev._id === id);
+      approving.status = 'Approved'
+
+      const newReview = [ approving, ...remaining];
+      setReviews(newReview);
+    }
+  })
+}
+
   return (
-    <div className='my-review-container container'>
-        <div className='mb-5 text-warning '> { reviews.length > 0 ? <h1>You have {reviews.length} {reviews.length > 1 ? 'Reviews': 'Review'}</h1>
-        :
-         <h1>You don't have any review</h1>
-         }</div>
-        <Table id='review-container' striped bordered hover size="md">
-          <thead className='bg-dark text-warning'>
-            <tr>
-              <th>Delete</th>
-              <th>Service Detail</th>
-              <th>Name & Email</th>
-              <th>Your Review</th>
-            </tr>
-          </thead>
-           <tbody>
-                 {
-                    reviews.map(review => <ReviewRow
+    <div className='my-review-container'>
+        <div className='mb-5 text-warning '>
+          { reviews.length < 1 ? 
+              <>
+              <h1 className='no-reviews text-center'>No reviews were added</h1>
+              </>
+              :
+              <>
+              <h1 className='mb-5'>You have {reviews.length} {reviews.length > 1 ? 'Reviews': 'Review'}</h1>
+              <Table  id='review-container'className='container' striped bordered hover size="md">
+                <thead className='bg-dark text-warning'>
+                  <tr>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                    <th>Service Detail</th>
+                    <th className='customer-detail'>Customer</th>
+                    <th>Review</th>
+                  </tr>
+                </thead>
+                <tbody>
+                      {
+                          reviews.map(review => <ReviewRow
                           key={review._id}
                           review={review}
                           handleDelete={handleDelete}
+                          handleStatusUpdate={handleStatusUpdate}
                     ></ReviewRow>)
-                  }
-          </tbody>
-          </Table>
-      </div>
-    );
-};
+                      }
+              </tbody>
+              </Table>
+              </>
+              }
+          </div>
+        </div>
+      );
+    };
 
 export default MyReviews;

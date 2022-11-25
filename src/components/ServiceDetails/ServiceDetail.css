@@ -1,16 +1,18 @@
-.service-detail{
+.service-detail-card{
   margin-top: 100px;
+  padding-top: 50px;
   margin-bottom: 100px;
   width: 75%;
 }
 
 #detail-card{
-  height: 450px;
-  border: 1px solid black;
+  height: 440px;
+  box-shadow: 1px 1px 1px 1px rgb(252, 251, 247);
+  background-color: rgb(245, 243, 241);
 }
 
-#detail-card h1{
-   margin-top: 30px;
+#detail-card h2{
+   margin-top: 50px;
 }
 
 .card-text{
@@ -18,20 +20,29 @@
 }
 
 #detail-card img{
-  height: 450px;
+  height: 440px;
   width: 100%;
 }
 
-.service-name{
+.service-name h2{
   color: rgb(148, 22, 22);
 }
 
 #review-section{
      display: grid;
      grid-template-columns: 7fr 5fr;
-     gap: 150px;
+     gap: 100px;
      margin-top: 150px;
      margin-bottom: 130px;
+}
+
+.warning-text{
+  color: rgb(148, 22, 22);
+}
+
+.warning-text button:hover{
+    background-color: black;
+    color: white;
 }
 
 #review-card{
@@ -53,8 +64,7 @@
 }
 
 .review-form{
-  border: 2px solid black;
-   border-radius: 15px;
+   border-radius: 12px;
    margin-bottom: 100px;
    background-color:rgb(238, 234, 229);
 }
@@ -66,14 +76,14 @@
 
 @media screen and ( max-width: 902px){
 
-  .service-detail{
-    margin-top: 0;
+  .service-detail-card{
+    margin-top: 10px;
   }
 
   #detail-card{
 margin: 0;
 width: 100%;
-height: 600px;
+height: 620px;
 margin-bottom: 40px;
   }
 
@@ -98,7 +108,7 @@ margin-bottom: 40px;
 }
 
 .review-form{
-   margin-bottom: 0;
+   margin-bottom: 40px;
 }
 
 }

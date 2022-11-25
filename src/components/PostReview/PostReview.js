@@ -9,7 +9,7 @@ const PostReview = ({handleCustomerReview}) => {
   return (
     <div className=''>
        <h2 className='service-name'>Add a Review</h2>
-        <div className='review-form pt-5 mt-5 container text-center w-100 px-5'>
+        <div className='review-form pt-5 mt-5 container text-center w-100 px-4'>
             <small>Service Name:</small>
             <h3 className='text-warning pb-2 
             pt-1'>{name}</h3>

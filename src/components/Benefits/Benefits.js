@@ -15,13 +15,13 @@ const Benefits = () => {
   return (
     <div className='benefits-container'>
       <h2 className='text-warning'>Benefits of Home made food from Quick Meal</h2>
-      <div className='benefits-card'>
+      <div className='benefits-card w-100'>
       {
         benefits.map(benefit =>(
            <>
-            <Card className='benefit' border="dark">
-               <Card.Header className='bg-dark text-warning py-3'>{benefit.title}</Card.Header>
-                  <Card.Body className='card-text'>
+            <Card className='benefit border-dark'>
+               <Card.Header className='benefit-header pt-3 text-dark border-dark bg-light'><h5>{benefit.title}</h5></Card.Header>
+                  <Card.Body className='benefit-body'>
                       <Card.Text>
                         {benefit.description}
                       </Card.Text>

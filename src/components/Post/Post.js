@@ -6,10 +6,12 @@ const Post = ({post}) => {
   const {question, answer} = post;
 
   return (
-       <div className=" container">
-            <Card id='blog-card' border="dark">
-               <Card.Header className='card-header py-5 bg-dark text-warning py-4'>{question}</Card.Header>
-                  <Card.Body className='card-text'>
+       <div className="container">
+            <Card id='blog-card'>
+               <Card.Header className='card-header bg-light pt-4 px-5  border-dark '>
+                <h5 className='blog-title'>{question}</h5>
+                </Card.Header>
+                  <Card.Body id='card-text'>
                       <Card.Text>
                         {answer}
                       </Card.Text>

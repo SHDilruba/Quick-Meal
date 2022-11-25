@@ -7,7 +7,8 @@ import './ServiceDetail.css';
 
 const ServiceDetail = () => {
   let service = useLoaderData();
-  const {_id, name, description, price, picture} = useLoaderData();
+  const {_id, name, description, price, picture} = service;
+  // const {_id, name, description, price, picture} = useLoaderData();
 
   const {user} = useContext(AuthContext);
 
@@ -23,10 +24,11 @@ const ServiceDetail = () => {
       name,
       customer: customer,
       email: email,
-      message
+      message,
+      photo: user.photoURL
     }
 
-    fetch('http://localhost:5000/reviews', {
+    fetch('http://localhost:5000/postReview', {
         method: 'POST',
         headers: {
            'content-type': 'application/json'
@@ -42,19 +44,18 @@ const ServiceDetail = () => {
       }
     })
     .catch(er => console.error(er));
-
 }
 
   return (
-    <div className='service-detail container col-lg-8'>
-        <div id='detail-card' className="card mt-5 rounded-end">
+    <div className='service-detail-card container col-lg-8'>
+        <div id='detail-card' className="card">
           <div className="row g-0">
             <div className="col-md-6">
               <img src={picture} className="img-fluid rounded-start" alt="..."/>
             </div >
             <div className="col col-md-6">
-              <div class="card-body">
-                <h1 className="service-name card-title">{name}</h1>
+              <div className="card-body">
+                <h2 className="service-name card-title">{name}</h2>
                 <p className="card-text">{description}</p>
                 <h3 className="card-text"><small className="text-warning ">Price: ${price}</small></h3>
               </div>
@@ -64,15 +65,22 @@ const ServiceDetail = () => {
        <div id='review-section'>
        <div className='all-reviews'>
            <AllReviews
-                  service={service}
-            ></AllReviews>
+                 service={service} key={_id}
+           ></AllReviews>
       </div>
-       <div>
-          <PostReview 
-               handleCustomerReview={handleCustomerReview}
-          ></PostReview>
+       <div className='service-name'>
+            { user ? 
+                  <PostReview 
+                    handleCustomerReview={handleCustomerReview}
+                    key={_id}
+                ></PostReview>
+                : 
+                <>          
+              <h4 className='warning-text'>Please  <Link to='/login'> <button className='btn btn-warning mx-2'>Log in</button></Link>  to add a review</h4>
+             </>
+            }
        </div>
-       </div>
+     </div>
    </div>
   );
 };

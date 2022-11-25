@@ -13,8 +13,8 @@ const Blog = () => {
 
   return (
     <div className="container blog-container">
-        <h2 className='blog text-center'>Blog about Technology</h2>
-         <div className="post-container">
+        <h1 className='blog text-center text-warning'>Blog about Technology</h1>
+         <div className="post-container container w-75">
             {
                posts.map(post => <Post 
                 post={post} 

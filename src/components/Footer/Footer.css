@@ -1,16 +1,24 @@
 .footer-container{
   height: 250px;
-  background-color: #040000;  
-   display: grid;
-   grid-template-columns: repeat(3,1fr);
-   gap: 20px;
-   align-items: center;
-   justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color:  rgb(238, 234, 229);
 }
 
 .logo{
   width: 70px;
   height: 50px;
+}
+
+.foot-text{
+   color:  rgb(249, 171, 26);
+}
+
+.foot-title{
+  color: rgb(148, 22, 22);
 }
 
 @media screen and (max-width: 902px){
