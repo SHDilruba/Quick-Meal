@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 import './AddService.css';
 
 const AddService = () => {
   const {_id} = useLoaderData();
+  useTitle('AddService');
 
   const handleAddService = event =>{
     event.preventDefault()
@@ -23,7 +25,7 @@ const AddService = () => {
 
     console.log(service);
 
-    fetch('http://localhost:5000/topServices', {
+    fetch('https://quick-meal2-server.vercel.app/topServices', {
       method: 'POST',
       headers: {
          'content-type': 'application/json'

@@ -28,7 +28,7 @@ const ServiceDetail = () => {
       photo: user.photoURL
     }
 
-    fetch('http://localhost:5000/postReview', {
+    fetch('https://quick-meal2-server.vercel.app/postReview', {
         method: 'POST',
         headers: {
            'content-type': 'application/json'

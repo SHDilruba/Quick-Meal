@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 import Post from '../Post/Post';
 import './Blog.css';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
+  useTitle('Blog')
 
   useEffect(() =>{
-       fetch('http://localhost:5000/blog')
+       fetch('https://quick-meal2-server.vercel.app/blog')
        .then(res => res.json())
        .then(data => setPosts(data))
   },[])

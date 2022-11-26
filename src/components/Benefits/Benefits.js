@@ -7,7 +7,7 @@ const Benefits = () => {
  const [benefits, setBenefits] = useState([]);
 
  useEffect( () =>{
-  fetch('http://localhost:5000/benefits')
+  fetch('https://quick-meal2-server.vercel.app/benefits')
   .then(res => res.json())
   .then(data => setBenefits(data))
 }, []);

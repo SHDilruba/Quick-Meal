@@ -3,10 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import './Signup.css';
 
 const Signup = () => {
   const {createUser, updateUser, loader} = useContext(AuthContext);
+  useTitle('Signup');
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState(false);

@@ -4,12 +4,15 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Login.css';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
   const { signIn, providerLogin, loading } = useContext(AuthContext);
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle('login');
+  
  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = event =>{
@@ -28,7 +31,7 @@ const Login = () => {
         }
         console.log(currentUser);
 
-fetch('http://localhost:5000/jwt', {
+fetch('https://quick-meal2-server.vercel.app/jwt', {
       method: 'POST',
       headers: {
           'content-type': 'application/json'

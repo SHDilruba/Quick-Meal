@@ -9,8 +9,6 @@ import Signup from "../../Signup/Signup";
 import { createBrowserRouter } from "react-router-dom";
 import MyReviews from "../../MyReviews/MyReviews";
 import AddService from "../../AddService/AddService";
-import PostReview from "../../PostReview/PostReview";
-import AllReviews from "../../AllReviews/AllReviews";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/serviceDetail/:id',
         element: <ServiceDetail></ServiceDetail>,
-        loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({params})=> fetch(`https://quick-meal2-server.vercel.app/services/${params.id}`)
       },
       {
         path: '/myReviews',
@@ -41,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: '/addService',
         loader:  async() =>{
-          return fetch('http://localhost:5000/services')
+          return fetch('https://quick-meal2-server.vercel.app/services')
         },
         element: <PrivateRoute><AddService></AddService></PrivateRoute>
       },
@@ -51,16 +49,10 @@ const router = createBrowserRouter([
       },
       {
         path: '/signup',
-        loader:  async() =>{
-          return fetch('http://localhost:5000/login')
-        },
         element: <Signup></Signup>
       },
       {
         path: '/login',
-        loader: async() =>{
-          return fetch('http://localhost:5000/login')
-        },
         element:  <Login></Login>
       }
     ]
