@@ -26,8 +26,8 @@ const HomeServices = () => {
                   services.map(service => <ServiceCard service={service} key={service._id}></ServiceCard>)
                 }
            </div>
-           <div className='all-services container  bg-dark rounded-pill mb-5 '>
-              <Link to={'/services'}> <Button variant="light" className='rounded-pill mb-5 py-3 w-50'>SEE ALL</Button></Link>
+           <div className='all-services container  bg-warning rounded-pill mb-5 '>
+              <Link to={'/services'}> <Button variant="dark" className='rounded-pill border-dark mb-5 py-3 w-50'>SEE ALL</Button></Link>
            </div>
       </div>
   );

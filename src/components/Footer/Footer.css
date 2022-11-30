@@ -13,14 +13,6 @@
   height: 50px;
 }
 
-.foot-text{
-   color:  rgb(249, 171, 26);
-}
-
-.foot-title{
-  color: rgb(148, 22, 22);
-}
-
 @media screen and (max-width: 902px){
   .footer-container{
     height: 380px ;

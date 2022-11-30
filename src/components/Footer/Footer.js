@@ -16,7 +16,7 @@ const Footer = () => {
                   <p className='text-light'>copyright reserved © 2022</p>
               </div>
               <div>
-                    <p className='foot-text'>Service area:</p>
+                    <p className='text-warning'>Service area:</p>
                     <h6 className='text-light'> Palermo central</h6>
                     <h6 className='text-light'>Sicily, Italy</h6>
               </div>
