@@ -25,12 +25,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/services',
+        loader:  async() =>{
+          return fetch('https://quick-meal2-server.vercel.app/services')
+        },
         element: <Services></Services>
       },
       {
         path: '/serviceDetail/:id',
-        element: <ServiceDetail></ServiceDetail>,
-        loader: ({params})=> fetch(`https://quick-meal2-server.vercel.app/services/${params.id}`)
+        loader: ({params})=> fetch(`https://quick-meal2-server.vercel.app/services/${params.id}`),
+        element: <ServiceDetail></ServiceDetail>
       },
       {
         path: '/myReviews',
@@ -45,6 +48,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/blog',
+        loader:  async() =>{
+          return fetch('https://quick-meal2-server.vercel.app/blog')
+        },
         element: <Blog></Blog>
       },
       {

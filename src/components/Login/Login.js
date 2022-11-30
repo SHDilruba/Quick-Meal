@@ -5,9 +5,11 @@ import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './Login.css';
 import useTitle from '../../hooks/useTitle';
+import { Spinner } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 
 const Login = () => {
-  const { signIn, providerLogin, loading } = useContext(AuthContext);
+  const { signIn, providerLogin, loading, setLoading } = useContext(AuthContext);
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
@@ -16,7 +18,7 @@ const Login = () => {
  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = event =>{
-     event.preventDefault(); 
+     event.preventDefault();
      const form = event.target;
      const email = form.email.value;
      const password = form.password.value;
@@ -42,7 +44,7 @@ fetch('https://quick-meal2-server.vercel.app/jwt', {
  .then(data => {
      console.log(data);
      localStorage.setItem('quickMealToken', data.token);
-     alert('Login successful')
+     toast.success('Login successful')         
          navigate (from, { replace: true })
      
  });
@@ -51,6 +53,7 @@ fetch('https://quick-meal2-server.vercel.app/jwt', {
      .catch(error =>{
          console.log(error.message)
          setError(error.message);
+         setLoading(false);
      })   
   }
 
@@ -58,7 +61,7 @@ fetch('https://quick-meal2-server.vercel.app/jwt', {
      
        const handleGoogleSignIn = () =>{
          providerLogin(googleProvider)
-          .then(result => {
+         .then(result => {
            const user = result.user; 
            navigate(from, {replace: true})
            setError('');
@@ -83,7 +86,11 @@ fetch('https://quick-meal2-server.vercel.app/jwt', {
                 <input type="password" name="password" className="form-control  py-2 rounded" id="formGroupExampleInput2" placeholder="Your password" required />
              <div className='text-danger'>{error}</div>
             </div>
-            <button className="login-btn btn btn-warning py-2 w-75 mt-4" type="submit">Login</button>
+            <button className="login-btn btn btn-warning py-2 w-75 mt-4" type="submit">{loading ? 
+            <Spinner animation="border" variant="dark" /> 
+            : 
+            'Login'}
+            </button>
          <div className='my-4 text-warning'>---------  OR  -----------</div>
           <div>
               <button className='git-login-btn w-75 py-2 mb-4 btn btn-dark' onClick={handleGoogleSignIn}>Log In with Google</button> 

@@ -1,13 +1,15 @@
 import React, { useContext, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import './Signup.css';
+import toast from 'react-hot-toast';
 
 const Signup = () => {
-  const {createUser, updateUser, loader} = useContext(AuthContext);
+  const {createUser, updateUser, loading, setLoading} = useContext(AuthContext);
   useTitle('Signup');
 
     const [error, setError] = useState('');
@@ -41,7 +43,7 @@ const Signup = () => {
     console.log(user);
     setSuccess(true); 
     form.reset();
-    alert('Signed up successfully')
+    toast.success('Signed up successfully')
     const userInfo = {
       displayName: name
     }
@@ -52,6 +54,7 @@ const Signup = () => {
   .catch(error => {
     console.log(error)
     setError(error.message)
+    setLoading(false);
   });
  }
 
@@ -76,8 +79,10 @@ const Signup = () => {
         </Form.Group>
         <p className='text-danger mt-4'>{error}</p>
       {success && <p className='text-success'>Sucessfully Signed up</p>}
-      <Button className='submit-btn w-75 my-4' variant="warning" type="submit">
-        Submit
+      <Button className='submit-btn w-75 my-4' variant="warning" type="submit">{loading ? 
+            <Spinner animation="border" variant="dark" /> 
+            : 
+            'Sign Up'}
       </Button>
     </Form>
     <p className='pt-3 pb-4'><small>Already have an account? Please </small><Link className='text-warning' to='/login'>Log in</Link></p>

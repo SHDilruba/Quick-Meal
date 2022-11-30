@@ -4,11 +4,11 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import AllReviews from '../AllReviews/AllReviews';
 import PostReview from '../PostReview/PostReview';
 import './ServiceDetail.css';
+import toast from 'react-hot-toast';
 
 const ServiceDetail = () => {
   let service = useLoaderData();
   const {_id, name, description, price, picture} = service;
-  // const {_id, name, description, price, picture} = useLoaderData();
 
   const {user} = useContext(AuthContext);
 
@@ -39,7 +39,8 @@ const ServiceDetail = () => {
     .then(data => {
       console.log(data)
       if(data.acknowledged){
-         alert('review added successfully')
+         toast.success('review added successfully')
+       
          form.reset();
       }
     })

@@ -3,7 +3,7 @@ import MyModal from '../Modal';
 ;
 
 const ReviewRow = ({review, handleDelete, handleStatusUpdate}) => {
-  const {_id, customer, name, message, email, service,status } = review;
+  const {_id, customer, name, message, email, service, status } = review;
   
    const [reviewService, setReviewService] = useState([]);
 

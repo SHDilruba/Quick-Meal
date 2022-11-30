@@ -40,13 +40,14 @@
    border-top-left-radius: 14px;
    border-top-right-radius: 14px;
 }
-
+#service-btn{
+  border: 3px solid black;
+}
 .all-services{
-    background-color: rgb(238, 234, 229);
     border-radius: 26px;
     box-shadow: 1px 1px 1px 1px rgb(227, 226, 224);
-    padding-top: 70px;
-    padding-bottom: 30px;
+    padding-top: 60px;
+    padding-bottom: 18px;
 }
 
 .all-services button:hover{

@@ -8,7 +8,7 @@ const Post = ({post}) => {
   return (
        <div className="container">
             <Card id='blog-card'>
-               <Card.Header className='card-header bg-light pt-4 px-5  border-dark '>
+               <Card.Header className='card-header bg-light pt-4 px-5  border-dark h-25'>
                 <h5 className='blog-title'>{question}</h5>
                 </Card.Header>
                   <Card.Body id='card-text'>

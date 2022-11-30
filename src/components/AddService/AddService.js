@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
 import './AddService.css';
+import toast from 'react-hot-toast';
 
 const AddService = () => {
   const {_id} = useLoaderData();
@@ -37,7 +38,7 @@ const AddService = () => {
     console.log(data)
   })
   .catch(er => console.error(er));
-  alert('service added successfully')
+  toast.success('service added successfully')
   event.target.reset();
 }
 
