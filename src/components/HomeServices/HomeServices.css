@@ -16,7 +16,7 @@
 
 #card{
   height: 550px;
-  background-color:  rgb(240, 238, 236);
+  background-color: rgb(240, 238, 236);
   border-radius: 16px;
 }
 
@@ -48,6 +48,8 @@
     box-shadow: 1px 1px 1px 1px rgb(227, 226, 224);
     padding-top: 60px;
     padding-bottom: 18px;
+    /* background-color: rgb(236, 225, 211);  */
+    background-color:  rgb(240, 238, 236);
 }
 
 .all-services button:hover{
